@@ -1,0 +1,23 @@
+<div class='card'>
+  <h2 class='day'><%= @day.strftime('%Y-%m-%d') %></h2>
+</div>
+<div class='card'>
+  <form action="/edit_expense/<%= @day %>/<%= @index %>" method="post">
+    <div class='row'>
+      <div class='col-25'>
+        <label for="edited_expense">Price:</label>
+      </div>
+      <div class='col-75'>
+        <input name="edited_expense" type="text" value="<%= as_money(@expense) %>">
+      </div>
+    </div>
+    <div class='row'>
+      <fieldset class="col-50">
+        <input type="submit" value="Save">
+      </fieldset>
+  </form>
+      <form class="col-50" action="/edit_expense/destroy/<%= @day %>/<%= @index %>" method="post">
+        <button type="submit">Delete Expense</button>
+      </form>
+    </div>
+</div>

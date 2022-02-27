@@ -1,0 +1,26 @@
+<div class='card'>
+  <form action="/new_expense" method="post">
+    <div class='row'>
+      <div class='col-25'>
+        <label for="date_of_expense">Day</label>
+      </div>
+      <div class='col-75'>
+        <input name="date_of_expense" type="date" class='date' value="<%= @todays_date.strftime('%Y-%m-%d') %>">
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-25'>
+        <label for="new_expense">Cost</label>
+      </div>
+      <div class='col-75'>
+        <input name="new_expense" placeholder="0.00" type="text" value="">
+      </div>
+    </div>
+    <div class='row'>
+      <fieldset class="actions">
+        <input type="submit" value="Save">
+        <a href="/daily_budget" class='cancel'>Cancel</a>
+      </fieldset>
+    </div>
+  </form>
+</div>

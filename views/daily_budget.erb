@@ -1,0 +1,23 @@
+<article id='article-1' class='top_card'>
+  <h2>Today</h2>
+  <h3>$<%= as_money(@total) %></h3>
+  <p>Left to spend</p>
+</article>
+<article id='article-2'>
+  <% @expenses.keys.sort.reverse.each do |date| %>
+  <ul>
+    <li class='card'>
+      <h2><%= date.strftime("%A, %B %d")%></h2>
+      <ul class="expenses">
+        <% if @expenses[date] == [0.0] %>
+          <li class='cost'>Nothing Spent</li>
+        <% else %>
+          <%  @expenses[date].each_with_index do |expense, index| %>
+            <a href='/edit_expense/<%= date %>/<%= index + 1 %>' class='expense'><li class='cost'>-$<%= as_money(expense) %></li></a>
+          <% end %>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+  <% end %>
+</article>

@@ -1,0 +1,14 @@
+<div class='card'>
+  <form action="/settings" method="post">
+    <div class='row'>
+        <label for="daily_budget">New Daily Budget?</label>
+        <input name="daily_budget" type="text" value="<%= as_money(@daily_budget) %>">
+    </div>
+    <div class='row'>
+      <fieldset class="actions">
+        <input type="submit" value="Save">
+        <button><a href="/daily_budget">Cancel</a></button>
+      </fieldset>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,23 @@
+<div class='card'>
+  <form action="/" method="post">
+    <div class='row'>
+      <div class='col-50'>
+        <label for="start_date">Starting Date</label>
+      </div>
+      <div class='col-50'>
+        <input name="start_date" type="date" class='date' value="<%= Date.today %>">
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-50'>
+        <label for="daily_budget">Daily Budget</label>
+      </div>
+      <div class='col-50'>
+        <input name="daily_budget" placeholder="$0.00" type="text" value="">
+      </div>
+    </div>
+    <fieldset class="actions">
+      <input type="submit" value="Submit">
+    </fieldset>
+  </form>
+</div>
