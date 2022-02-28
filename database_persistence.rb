@@ -147,6 +147,10 @@ class DatabasePersistence
     query(update_expense_sql, cost, expense_id)
   end
   
+  def disconnect
+    @db.close
+  end
+  
   private
 
   def get_date_id(date)
@@ -166,9 +170,5 @@ class DatabasePersistence
     result = query(expense_id_sql, date_id);
     result[index]["id"]
   end
-  
-  def disconnect
-    @db.close
-  end
-  
+
 end
