@@ -171,3 +171,7 @@ post "/settings" do
   @storage.set_daily_budget(new_daily_budget.to_f)
   redirect '/daily_budget'
 end
+
+after do
+  @storage.disconnect
+end

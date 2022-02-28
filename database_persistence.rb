@@ -166,4 +166,9 @@ class DatabasePersistence
     result = query(expense_id_sql, date_id);
     result[index]["id"]
   end
+  
+  def disconnect
+    @db.close
+  end
+  
 end
