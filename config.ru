@@ -1,2 +1,2 @@
-require "./file"
+require "./new_daily"
 run Sinatra::Application

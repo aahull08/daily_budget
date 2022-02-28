@@ -3,7 +3,6 @@ require "sinatra/content_for"
 require "tilt/erubis"
 require 'date'
 
-require_relative "session_persistence"
 require_relative "database_persistence"
 
 configure do
@@ -15,7 +14,6 @@ end
 configure(:development) do
   require "sinatra/reloader"
   also_reload "database_persistence.rb"
-  also_reload "session_persistence.rb"
 end
 
 helpers do
