@@ -69,8 +69,13 @@ article h2 {
   font-size: 50px;
 }
 
-article h3 {
+.positive {
   color: green;
+  font-size: 150px;
+}
+
+.negative{
+  color: red;
   font-size: 150px;
 }
 

@@ -123,7 +123,7 @@ get '/edit_expense/:day/:expense' do
   @day = make_date(params[:day])
   @index = params[:expense].to_i
   @expense = @storage.get_expense(@day, @index)
-
+  
   erb :edit_expense, layout: :layout
 end
 
@@ -140,18 +140,18 @@ post '/edit_expense/:day/:expense' do
   date_of_expense = params[:day]
   date = make_date(date_of_expense)
   cost = params[:edited_expense].to_f
+  index = params[:expense].to_i
   
   if cost > 0
     session[:success] = "Your expense has been updated"
   else
     session[:error] = "Please enter an expense greater than zero"
-    redirect '/daily_budget'
+    redirect "/edit_expense/#{date}/#{index}"
   end
 
-  index = params[:expense].to_i
+
   
   @storage.update_expense(cost, index, date)
-  #session[:expenses][date][index] = cost
   redirect '/daily_budget'
 end
 
@@ -166,7 +166,7 @@ post "/settings" do
   if new_daily_budget > 0
     session[:success] = "Your daily budget has been updated"
   else
-    session[:error] = "Please enter a daily_budget greater than zero"
+    session[:error] = "Please enter a daily budget greater than zero"
     redirect '/settings'
   end
   

@@ -1,6 +1,10 @@
 <article id='article-1' class='top_card'>
   <h2>Today</h2>
-  <h3>$<%= as_money(@total) %></h3>
+  <% if @total > 0 %>
+    <h3 class="positive">$<%= as_money(@total) %></h3>
+  <% else %>
+    <h3 class="negative">-$<%= as_money(@total.abs) %></h3>
+  <% end %>
   <p>Left to spend</p>
 </article>
 <article id='article-2'>
