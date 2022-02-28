@@ -1,6 +1,6 @@
 <article id='article-1' class='top_card'>
   <h2>Today</h2>
-  <% if @total > 0 %>
+  <% if @total >= 0 %>
     <h3 class="positive">$<%= as_money(@total) %></h3>
   <% else %>
     <h3 class="negative">-$<%= as_money(@total.abs) %></h3>
