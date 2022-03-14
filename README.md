@@ -7,6 +7,10 @@ This is a simple budgeting app that allows a user to set a daily budget and keep
 This project is based on an sinatra/ruby backend connected to a posgres SQL database using a adapter pattern. The sql database has two tables on for the expenses and one for the dates and daily budget. In the future I wish to adapt this to three tables to seperate the date and daily budget to allow for more flexability. These tables are many to one relationship because there can be more than one expense for each day but only one date for each expense. 
 The front-end uses vanilla HTML and CSS.
 
+## Development
+
+To start building this application I started with a basic file using cookies/session to store the data to be used for the application. This included dates, daily budget, and expenses. AFter getting the application working, I pulled out all of the methods creating, retrieving, updating, and deleting data from the main application file into a session persistance file to set up a simple interation between the session and the main file. Lastly, I changed the session persistance file into a data persistance file that connected to a prosgre SQL database using an adapter pattern.
+
 ## Usage
 ### Step 1: Create you daily Budget
 ![image](https://user-images.githubusercontent.com/12583065/158086616-4e764bdc-f75d-4bab-87a8-58c262a3f89a.png)
